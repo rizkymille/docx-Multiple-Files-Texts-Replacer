@@ -9,12 +9,23 @@ import docx
 import os
 
 files = []
-for file in os.listdir(os.getcwd()):
+docs_path = input("Please enter documents absolute filepath: ")
+for file in os.listdir(docs_path):
     if file.endswith(".docx"):
         files.append(file)
 
-words_to_replace = input("Please enter words to be replaced: ")
-words_replacement = input("Please enter replacement words: ")
+words_to_replace = []
+words_to_replace_input = ''
+
+while words_to_replace_input != "stop":
+    words_to_replace_input = input("Please enter text you want to replace, type 'stop' if there's no more text to replace: ")
+    if words_to_replace_input != 'stop':
+        words_to_replace.append(words_to_replace_input)
+    
+words_replacement = []
+for words_to_replace_input in words_to_replace:
+    words_replacement_input = input("Please enter the replacement text: ")
+    words_replacement.append(words_replacement_input)
 
 def docx_find_replace_text(doc, search_text, replace_text):
     paragraphs = list(doc.paragraphs)
@@ -101,7 +112,11 @@ def docx_find_replace_text(doc, search_text, replace_text):
             # print(p.text)
 
 for file in files:
-    doc = docx.Document(file)
-    docx_find_replace_text(doc, words_to_replace, words_replacement)
-    doc.save(file)
-    print(f"Replacement {file} Completed")
+    for i in range(0, len(words_to_replace)):
+        for i in range(0, len(words_replacement)):
+            doc = docx.Document(file)
+            docx_find_replace_text(doc, words_to_replace[i], words_replacement[i])
+            doc.save(file)
+    print(f"\nReplacement {file} Completed")
+
+input("Press Enter to exit... ")
