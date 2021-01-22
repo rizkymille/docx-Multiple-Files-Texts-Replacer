@@ -9,8 +9,7 @@ import docx
 import os
 
 files = []
-docs_path = input("Please enter documents absolute filepath: ")
-for file in os.listdir(docs_path):
+for file in os.listdir(os.getcwd()):
     if file.endswith(".docx"):
         files.append(file)
 
@@ -118,5 +117,3 @@ for file in files:
             docx_find_replace_text(doc, words_to_replace[i], words_replacement[i])
             doc.save(file)
     print(f"\nReplacement {file} Completed")
-
-input("Press Enter to exit... ")
