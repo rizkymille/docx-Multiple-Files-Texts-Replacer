@@ -2,7 +2,7 @@
 Python script for replacing multiple texts in multiple word documents (docx) files  
   
 ## Requirement
-install python-docx package by  
+Install python-docx package by  
 `pip install python-docx`
 
 ## How to use  
