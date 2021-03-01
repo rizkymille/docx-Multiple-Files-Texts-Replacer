@@ -3,7 +3,7 @@ Python script for replacing multiple texts in multiple word documents (docx) fil
   
 ## Requirement
 install python-docx package by  
-'pip install python-docx'
+`pip install python-docx`
 
 ## How to use  
 a. (Executable only) put the documents you want to replace in the same folder as the .exe file (executable folder)  
