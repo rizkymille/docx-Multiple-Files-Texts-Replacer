@@ -10,4 +10,4 @@ e. Wait for the process until finished
 f. Done!
 
 ## Issues
-The code will emit error if one of the files didn't contain the replaced word
+The code will emit error if one of the files didn't contain the replaced word. Still figuring out how to skip loop
