@@ -8,3 +8,6 @@ c. Type the texts you want to replace, then type "stop" when you finished
 d. Type the texts as replacement  
 e. Wait for the process until finished  
 f. Done!
+
+## Issues
+The code will emit error if one of the files didn't contain the replaced word
